@@ -1,0 +1,30 @@
+
+include ../variables/makefile.variables
+
+CC = g++
+CFLAGS = -g -c -Wall -fPIC  -std=c++11 -pthread 
+LFLAGS = -shared -lc   -lm  -llapack -lblas -lreadline -fPIC 
+
+OBJ =  $(patsubst %.cc,%.o, $(SRC) )
+#OBJ =  $(addprefix $(LIBHOME), $(TEMP) )
+
+$(LIB): $(OBJ)
+	( cd $(OBJHOME);   \
+	$(CC) $(LFLAGS) -o $(LIB) $(OBJ) ; \
+	)
+$(OBJ): %.o: %.cc
+	( $(CC) $(CFLAGS) $< -o $@;  \
+	cp $@ $(OBJHOME);   \
+	)
+	
+clean: 
+	@rm -rf *.o *.oct $(LIB)
+
+
+#generate object file
+#g++ -g -c -Wall -fPIC beat11.cpp -o beat11.o
+#to generate library from the object file
+#g++ -shared -Wl,-soname,libbeat.so.1 -o libbeat.so.1.0.1 beat11.o -lc
+#to link it with another cpp file; -I option to refer to the library header file
+#g++ -L. -lbeat -I . -o checkbeat checkbeat.cpp
+

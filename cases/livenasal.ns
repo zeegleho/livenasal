@@ -1,0 +1,27 @@
+
+section nasalcave
+shape = piple.dat 
+temperature = 0
+dust_sensitive = 0
+ends
+
+section nerve
+shape = filename.dat
+ends
+
+section vessel
+shape = filename.dat 
+ends
+
+section body
+temperature = 0
+ends
+
+section air
+dust = 0
+temperature = 0
+pressure = 0
+ends
+
+option gravity = [g, x,y,z]  	//g: coefficent of gravity
+//x,y,z: the direction of gravity

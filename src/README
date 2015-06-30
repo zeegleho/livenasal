@@ -1,0 +1,2 @@
+export LD_LIBRARY_PATH=/home/zeegle/livenasal/src/input:/home/zeegle/livenasal/src/output:/home/zeegle/livenasal/src/simulator:/home/zeegle/livenasal/src/console:/home/zeegle/livenasal/src/messages:/home/zeegle/livenasal/src/utils:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/zeegle/livenasal/src/lib:$LD_LIBRARY_PATH

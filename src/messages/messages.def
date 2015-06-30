@@ -1,0 +1,92 @@
+
+#Every line begin with # C N M S X
+#  #
+#	comment
+#  C str
+#	c code/comment to be copied into cc file
+#  N name
+#	message name
+#  M str 
+#	message String
+#  S severity 
+#	severity, it is msgAmputate, msgWarning, msgNotice, msgIgnore
+#  X int 
+#	All subsequent message numbers will be assigned sequentially begin at int
+#
+#
+#
+#  This file will be translated to class MessageDef. 
+#  And generated messages.h messages.cc
+#  Ref messageDef for definition of class MessageDef
+#
+# And all the messages will be insert into a map:
+#   static std::map< NSIdent* name,  MessageDef*,  NSIdentLess > message_defs_;
+#
+# example of messageMacros.h
+# --------------------
+# #define MSG_Example1 Messages:msg_Example_1;
+# --------------------
+#
+# example of message.h
+# --------------------
+# #include "messageMacros.h"
+#
+#
+# class Messages{
+# public:
+#     static MessageDef *msg_Example_1;
+#  
+# };
+# --------------------
+#
+#
+# example of message.cc
+# --------------------
+# #include "messageDef.h"
+#
+# MessageDef * Messages::msg_Example_1 = new messageDef(
+#      NSIdent::create( "Example" ),
+#      NSIdent::create( "This is an example msg with one arg %d" ),
+#      sev,
+#      id
+#  );
+#
+#
+#
+
+
+# for Init, 0-100
+X 0
+
+N NoEnoughArg
+M "There is no enough arguments. Specified one at least!"
+S msgWarning
+
+N UnknowArg
+M "zeegle message error, unkown option :%s"
+S msgWarning
+
+N CannotCreateTempDir 
+M "zeegle message error, Can not create temp dir:%s"
+S msgWarning
+
+# for Input, 100-200
+X 100
+
+N SectionNotFound 
+M "There section '%s' is not found!"
+S msgWarning
+
+# for Simulation, 200-300 
+X 200
+
+
+# for Output, 300-400
+X 300
+
+
+# for debug, 1000-
+X 1000
+N DUMP_SPACEPARTICLESNUM 
+M "space particles number is %d"
+S msgNotice

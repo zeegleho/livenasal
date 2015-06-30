@@ -1,0 +1,7 @@
+
+#LIVENASALHOME = /home/zeegle/workspace/livenasal/
+#HOME = /home/zeegle/workspace/livenasal/
+SRCHOME = $(LIVENASALHOME)/src/
+OBJHOME = $(LIVENASALHOME)/obj/
+LIBHOME = $(OBJHOME)/lib
+BINHOME = $(OBJHOME)/bin

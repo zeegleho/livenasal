@@ -1,0 +1,14 @@
+DUMP_IDB
+DUMP_SDB
+DUMP_VDB
+DUMP_CONSOLE
+DUMP_OPTIONS
+DUMP_SECTION nasalcave 
+;DUMP_SECTION section_name_1 section_name_2 ;...
+;DUMP_SECTION_PARAM section_name param_name_1 param_name_2 ;...   
+;DUMP_SECTION_PARAM global gravity 
+DUMP_SECTION_PARAM nasalcave temperature 
+DUMP_SECTION_PARAM nasalcave shape 
+DUMP_SPACEPARTICLESNUM 1
+DUMP_FIRSTSPACEPARTICLE 1
+

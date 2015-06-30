@@ -1,0 +1,13 @@
+name;valueType;arraySize;candidateValue;defaultValue;accessable;descriptions
+#validate value type are: bool, int, double, string, boolarray, intarray, doublearray, stringarray, file
+#if value is array, split is with ','
+#options usage  -option value,value,value
+#               -option file(filename, filename, ... )
+#validate accessable are: public private protect cmd nsfile 
+inter_method ; string;1 ; spline, linear ;  spline ;public;  specify the method of interP
+simulator; string;; air, dust, humidity ; air;public;the value must be air, dust, humidity, and so on
+config_file;file;;;config.nscfg;public;Set the config file
+gravity;doublearray;3;;0,0,0;public; it is a vector, the length of the vector is the coefficent of gravity, it must used as -gravity x,y,z  
+#mt
+#hosts
+accuracy;int;1;8,9,10;8;public;the accuracy of simulation, the range of simulation is pow(2,accuracy)
