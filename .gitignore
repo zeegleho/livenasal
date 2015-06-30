@@ -1,0 +1,13 @@
+*.o
+*.oct
+*.so
+obj/* 
+doc/*
+cases/*
+src/console/options.cc
+src/console/options.h
+src/console/optionsMacros.*
+src/messages/messages.h
+src/messages/messagesMacros.h
+src/messages/messages.cc
+
