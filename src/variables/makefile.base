@@ -3,7 +3,8 @@ include ../variables/makefile.variables
 
 CC = g++
 CFLAGS = -g -c -Wall -fPIC  -std=c++11 -pthread 
-LFLAGS = -shared -lc   -lm  -llapack -lblas -lreadline -fPIC 
+LFLAGS = -shared -lc   -lm  -fPIC 
+# -llapack -lblas -lreadline
 
 OBJ =  $(patsubst %.cc,%.o, $(SRC) )
 #OBJ =  $(addprefix $(LIBHOME), $(TEMP) )
@@ -13,9 +14,9 @@ $(LIB): $(OBJ)
 	$(CC) $(LFLAGS) -o $(LIB) $(OBJ) ; \
 	)
 $(OBJ): %.o: %.cc
-	( $(CC) $(CFLAGS) $< -o $@;  \
-	cp $@ $(OBJHOME);   \
-	)
+	( $(CC) $(CFLAGS) $< -o $(OBJHOME)/$@;  )
+	
+	#cp $@ $(OBJHOME);   \
 	
 clean: 
 	@rm -rf *.o *.oct $(LIB)
